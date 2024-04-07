@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './componenets/Navbar'
 import Page from './componenets/page'
+import LocationsPage from './componenets/LocationPage'
 
 function HomePage() {
   return (
@@ -8,6 +9,7 @@ function HomePage() {
         <div className='nav'>
             <Navbar/>
             <Page/>
+            <LocationsPage/>
         </div>
     </div>
   )

@@ -28,8 +28,20 @@ const Slideshow = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-row h-screen">
         <div className="flex-1 bg-blue-900 text-white p-8 overflow-hidden">
+        <div className="flex-1">
+          <div className='flex flex-col'>
+            <h1>We’re Different</h1>
+            <h1>Because</h1>
+
+            <img
+            src={content[activeIndex].image}
+            alt="Associated content"
+            className="rounded-lg shadow-lg w-1/3 h-1/3"
+          />
+          </div>
+        </div>
           {content.map((section, index) => (
             <div key={index} className="relative mb-4">
               <h1 
@@ -46,13 +58,6 @@ const Slideshow = () => {
               )}
             </div>
           ))}
-        </div>
-        <div className="flex-1">
-          <img
-            src={content[activeIndex].image}
-            alt="Associated content"
-            className="rounded-lg shadow-lg"
-          />
         </div>
       </div>
     );
