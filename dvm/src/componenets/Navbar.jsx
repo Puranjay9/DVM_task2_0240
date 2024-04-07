@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 function Navbar() {
-    const [show, handleShow] = useState(false);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
 
-    const navbarTransition = () => {
-        if (window.scrollY > 150) {
-            handleShow(true);
-        } else {
-            handleShow(false);
-        }
-    }
+    const handleScroll = () => {
+        const currentScrollPos = window.pageYOffset;
+        setVisible(prevScrollPos > currentScrollPos || currentScrollPos === 0);
+        setPrevScrollPos(currentScrollPos);
+    };
 
     useEffect(() => {
-        window.addEventListener("scroll", navbarTransition);
-        return () => window.removeEventListener("scroll", navbarTransition);
-    }, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [prevScrollPos, visible]);
 
     return (
-        <div className={`Nav fixed top-0 h-1/6 w-full z-10 transition-all duration-500 z-5 ${show ? '-translate-y-full' : 'translate-y-0'}`}>
+        <div className={`Nav fixed top-0 h-1/6 w-full z-10 transition-all duration-500 z-5 ${visible? 'translate-y-0' : '-translate-y-full'}`}>
             <div className='bg-white '>
                 <div className='text-sm bg-slate-100'>
                     <ul className='list-none flex justify-end'>
@@ -27,8 +26,8 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className='flex justify-between items-center ml-16 mt-8 mb-8 '>
-                    <div className='bg-white flex text-logo-txt' ml-300px>
-                        <img src="./public/logo.jpg" alt="Logo" className="w-4 h-4" />
+                    <div className='bg-white flex text-logo-txt' >
+                        <img src="logo.jpg" alt="Logo" className="w-4 h-4" />
                         <div className='text-2xl font-bold'>
                             <h1>MANUPORT</h1>
                             <h1>LOGISTICS</h1>

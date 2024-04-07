@@ -1,4 +1,5 @@
 import React from 'react'
+import Slideshow from './Slideshow'
 
 function Page() {
   return (
@@ -20,12 +21,13 @@ function Page() {
             </div>
 
             <div className="flex-1 flex items-center justify-center p-8">
-                <video className="rounded-lg shadow-lg">
-                    <source src='/public/Manuport_Logistics.mp4' type="video/mp4"></source>
+                <video className="rounded-lg shadow-lg" autoPlay={true}>
+                    <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
                 </video>
             </div>
         </div>
     </div>
+    <Slideshow/>
    </div>
   )
 }
