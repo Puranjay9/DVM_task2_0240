@@ -30,7 +30,7 @@ const Slideshow = () => {
     const [list , setList ] = useState(false);
 
     return (
-      <div className="flex flex-row bg-blue-900 text-white p-8 overflow-hidden h-screen rounded-t-xl shadow-t-3xl">
+      <div className="flex flex-row bg-blue-900 text-white p-8 overflow-hidden h-[900px] rounded-t-xl shadow-t-3xl">
         
         <div className="flex-1 ml-6 mr-0">
           <div className='flex text-7xl flex-col'>
