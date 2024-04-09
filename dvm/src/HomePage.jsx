@@ -5,7 +5,7 @@ import LocationsPage from './componenets/LocationPage'
 
 function HomePage() {
   return (
-    <div className="text-6xl bg-gray-800">
+    <div className="text-6xl">
         <div className='nav'>
             <Navbar/>
             <Page/>

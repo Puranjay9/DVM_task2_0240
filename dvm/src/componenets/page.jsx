@@ -21,7 +21,7 @@ function Page() {
             </div>
 
             <div className="flex-1 flex items-center justify-center p-8">
-                <video className="rounded-lg shadow-lg" autoPlay={true}>
+                <video className="rounded-lg shadow-lg" autoPlay loop>
                     <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
                 </video>
             </div>

@@ -4,7 +4,8 @@ const content = [
   {
     title: "We Believe in People",
     text: "We believe in our people because they are our greatest asset. At MPL, we are not just a company; we are a family. Each and every one of us shares our unique MPL culture, in which everyone is valued, supported, and empowered to reach their full potential.",
-    image: "/img/img1.jpg"
+    image: "/img/img1.jpg",
+    position :"mt"
   },
   {
     title: "We Solve Each and Any Shipping Problem",
@@ -26,40 +27,52 @@ const content = [
 
 const Slideshow = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [list , setList ] = useState(false);
 
     return (
-      <div className="flex flex-row h-screen">
-        <div className="flex-1 bg-blue-900 text-white p-8 overflow-hidden">
-        <div className="flex-1">
-          <div className='flex flex-col'>
+      <div className="flex flex-row bg-blue-900 text-white p-8 overflow-hidden h-screen rounded-t-xl shadow-t-3xl">
+        
+        <div className="flex-1 ml-6 mr-0">
+          <div className='flex text-7xl flex-col'>
             <h1>We’re Different</h1>
             <h1>Because</h1>
 
             <img
             src={content[activeIndex].image}
             alt="Associated content"
-            className="rounded-lg shadow-lg w-1/3 h-1/3"
+            className="rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 mt-[230px]"
           />
           </div>
         </div>
-          {content.map((section, index) => (
-            <div key={index} className="relative mb-4">
+
+        <div className='flex-1 flex-col p-2 text-white ml-0 mt-11 mr-11 '>
+        {content.map((section, index) => (
+            <div key={index} className="relative mb-6">
               <h1 
-                className="text-2xl font-bold cursor-pointer"
-                onClick={() => setActiveIndex(index)}
+                className="text-4xl cursor-pointer mb-8"
+                onClick={() => {
+                  setActiveIndex(index);
+                        setList(true);
+                }
+                }
               >
                 {section.title}
               </h1>
               {activeIndex === index && (
                 <>
-                  <p className=" text-sm text-blue-200 ">{section.text}</p>
-                  <div className="h-1 bg-white transition-all duration-500 ease-in-out w-full"></div>
+                  <p className=" text-2xl text-blue-200 transition-all duration-150 ease-in m-11 ml-0 ">{section.text}</p>
                 </>
               )}
+              <div className="h-1 bg-slate-500  w-full">
+                {list&&<div className='h-1 bg-white transition-all duration-500 ease-in-out w-full'>
+                        
+                  </div>}
+              </div>
             </div>
           ))}
         </div>
-      </div>
+        
+        </div>
     );
   };
   
