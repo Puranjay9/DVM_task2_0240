@@ -27,7 +27,7 @@ function Navbar() {
                 </div>
                 <div className='flex justify-between items-center ml-16 mt-2  '>
                     <div className='bg-white flex text-logo-txt' >
-                        <img src="logo.jpg" alt="Logo" className=" h-full" />
+                        <img src="logo.jpg" alt="Logo" className=" h-full mt-2" />
                         <div className='text-2xl font-extrabold p-0'>
                             <h1 className='m-0'>MANUPORT</h1>
                             <h1 className='m-0'>LOGISTICS</h1>

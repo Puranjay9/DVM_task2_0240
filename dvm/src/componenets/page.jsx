@@ -3,9 +3,16 @@ import Slideshow from './Slideshow'
 
 function Page() {
   return (
-   <div className='mt-[145px]'>
+   <div className='mt-[145px] border-black border-solid'>
     <div className='flex h-screen z-1'> {/*text and the video */}
         <div className='flex-1 flex  bg-white text-txt-clr p-8'>
+            <div className="flex-1 flex items-center justify-center p-8 ">
+                <video className="rounded-lg shadow-lg " autoPlay loop>
+                    <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
+                </video>
+            </div>
+
+
             <div className='absolute text-9xl font-bold'>
                 <h1>Freight</h1>
                 <h1>forwarding.</h1>
@@ -18,12 +25,6 @@ function Page() {
                       different.
                     </span>
                 </div>
-            </div>
-
-            <div className="flex-1 flex items-center justify-center p-8">
-                <video className="rounded-lg shadow-lg" autoPlay loop>
-                    <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
-                </video>
             </div>
         </div>
     </div>
