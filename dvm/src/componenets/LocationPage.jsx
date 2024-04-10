@@ -1,4 +1,5 @@
 import React , {useState} from 'react';
+import './LocationPage.css'
 
 const LocationsPage = () => {
   
@@ -14,8 +15,13 @@ const LocationsPage = () => {
           Around the world, our teams are dedicated to meeting your logistics needs. As part of the
           <span className=" text-blue decoration underline"> Euroports Group</span>, we can leverage group assets to support our solutions and add financial stability and flexibility, which is all to your benefit. Spin the globe and find your location.
         </p>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded inline-block text-2xl m-6 mb-[65px]">
-          All Locations
+        <button className="bg-white text-[#00358d] flex flex-row font-semibold rounded-[30px] items-center border-[1px] border-[#99aed1]  text-xl ml-0 p-3 b-[65px] " >
+          <h1 className='ml-2'>All Locations</h1>
+          <button className='p-2 bg-[#00358d] h-full overflow-hidden min-h-10 min-w-10 rounded-full flex items-center ml-4 self-center justify-center hover:scale-105'>
+           
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className='arrow'><path fill="#fff" fill-rule="evenodd" d="M.15 12a.6.6 0 0 1 .6-.6h22.5a.6.6 0 0 1 0 1.2H.75a.6.6 0 0 1-.6-.6Z" clip-rule="evenodd"></path><path fill="#fff" fill-rule="evenodd" d="M12.326 1.076a.6.6 0 0 1 .848 0l10.5 10.5a.6.6 0 0 1 0 .848l-10.5 10.5a.6.6 0 0 1-.848-.848L22.4 12 12.326 1.924a.6.6 0 0 1 0-.848Z" clip-rule="evenodd"></path></svg>
+             
+          </button>
         </button>
         </div>
       </div>

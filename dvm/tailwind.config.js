@@ -12,7 +12,8 @@ module.exports = {
       },
       margin: {
         '145px': '145px',
-      }
+      },
+
     },
   },
   plugins: [],
