@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
 import './LocationPage.css'
+import CountryAni from './CountryAni';
 
 const LocationsPage = () => {
   
@@ -25,6 +26,7 @@ const LocationsPage = () => {
         </button>
         </div>
       </div>
+      <CountryAni/>
     </div>
   );
 };
