@@ -19,7 +19,20 @@
     -webkit-text-stroke: 1px black;
 }
 
+.image {
+    animation: car 1.7s linear  forwards; 
+}
+
+@keyframes car {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-100%);}
+}
+
+
+
+
 .box{
+    overflow: hidden;
     border-radius:31% 0% 38% 0% / 40% 10% 40% 10%  ; 
     display: flex;
     flex-direction: column;
@@ -28,4 +41,20 @@
     background-color: #fff;
     width: 40%;
     height: 45%;
+}
+.preloader-container.active .box {
+    transform: scale(3);
+    transition: all 0.5s ease-out;
+}
+
+.preloader-container.active .preloader-text {
+    opacity: 0;
+    transition: all 0.1s ease-out;
+}
+
+.preloader-container.active{
+    transition: all 4s ease-out;
+    transition-delay: 3.5s;
+    transform: translateY(-100%);
+    border-bottom: calc(50% * sqrt(0.25 + 1)); 
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const content = [
   {
@@ -22,12 +22,31 @@ const content = [
     text: "Our flexibility and desire to help customers in any way possible really sets us apart. Our fast decision-making comes from the open internal communication strategy we follow.",
     image: "/img/img4.jpg"
   },
-  
 ];
 
 const Slideshow = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [list , setList ] = useState(false);
+    const [loading , setLoading ] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setLoading((prevProgress) => {
+          if (prevProgress >= 100) {
+            setActiveIndex((prevIndex) => (prevIndex === content.length - 1 ? 0 : prevIndex + 1));
+            return 0;
+          } else {
+            return prevProgress + 1;
+          }
+        });
+      }, 100); // Adjust the interval as needed
+  
+      return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+      // Reset loading to 0 immediately when the activeIndex changes
+      setLoading(0);
+    }, [activeIndex]);
 
     return (
       <div className="flex flex-row bg-blue-900 text-white p-8 overflow-hidden h-[900px] rounded-t-xl shadow-t-3xl">
@@ -38,43 +57,36 @@ const Slideshow = () => {
             <h1>Because</h1>
 
             <img
-            src={content[activeIndex].image}
-            alt="Associated content"
-            className="rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 mt-[230px]"
-          />
+              src={content[activeIndex].image}
+              alt="Associated content"
+              className="rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 mt-[230px]"
+            />
           </div>
         </div>
 
         <div className='flex-1 flex-col p-2 text-white ml-0 mt-11 mr-11 '>
-        {content.map((section, index) => (
+          {content.map((section, index) => (
             <div key={index} className="relative mb-6">
               <h1 
                 className="text-4xl cursor-pointer mb-8"
-                onClick={() => {
-                  setActiveIndex(index);
-                        setList(true);
-                }
-                }
+                onClick={() => setActiveIndex(index)}
               >
                 {section.title}
               </h1>
-              {activeIndex === index && (
-                <>
-                  <p className=" text-2xl text-blue-200 transition-all duration-150 ease-in m-11 ml-0 ">{section.text}</p>
-                </>
-              )}
-              <div className="h-1 bg-slate-500  w-full">
-                {list&&<div className='h-1 bg-white transition-all duration-500 ease-in-out w-full'>
-                        
-                  </div>}
+              {activeIndex === index ? (
+                <p className="text-2xl text-blue-200 m-11 ml-0">{section.text}</p>
+              ) : null}
+              <div className="h-[1.5px] bg-slate-500 w-full overflow-hidden">
+                <div 
+                  className={`h-[1.5px] bg-white transition-all duration-500 ease-in-out`}
+                  style={{ width: `${activeIndex === index ? loading : 0}%` }}
+                ></div>
               </div>
             </div>
           ))}
         </div>
-        
-        </div>
+      </div>
     );
-  };
-  
+};
 
 export default Slideshow;

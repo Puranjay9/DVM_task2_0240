@@ -23,6 +23,10 @@ const Preloader = ({ onLoad }) => {
     <div className={`preloader-container ${loading ? 'active' : ''}`}>
         <div className='box'>
       <div className="preloader-text">{`${progress}%`}</div>
+      <img className='image'
+        src='car.png'
+      >
+      </img>
       </div>
     </div>
   );
