@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function ImagesShow({ images, delay = 3000 }) {
+function ImagesShow({ images, delay = 3000 ,letter }) {
   const [currIndex, setCurrIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
@@ -17,11 +17,11 @@ function ImagesShow({ images, delay = 3000 }) {
   }, [images, delay]);
 
   return (
-    <div>
-      <div className="overflow-hidden">
+    <div className=' w-11/12  justify-end'>
+      <div className="overflow-hidden ">
         <img
           className={`slideshow-image transition-all ease-out duration-300 ${
-            isTransitioning ? 'translate-x-0 opacity-1' : 'translate-x-full opacity-0'
+            isTransitioning ? `translate-${letter}-0 opacity-1` : `translate-${letter}-full opacity-0`
           }`}
           src={images[currIndex]}
           alt={`Slide ${currIndex + 1}`}

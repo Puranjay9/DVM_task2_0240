@@ -7,7 +7,7 @@ function Page() {
     <div className='flex h-screen z-1 w-11/12 border-t border-r border-solid border-[#00112e] rounded-tr-[6rem] z-[1] '> {/*text and the video */}
         <div className='flex-1 flex  bg-white text-txt-clr '>
             <div className="flex-1 flex items-center justify-end">
-                <video className=" justify-end w-6/12 h-full mr-0 z-0 object-cover" autoPlay loop>
+                <video className=" justify-end w-6/12 h-full mr-0 z-0 object-cover text-white" autoPlay loop>
                     <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
                 </video>
             </div>

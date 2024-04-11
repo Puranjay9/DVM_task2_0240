@@ -3,59 +3,60 @@ import React, { useState } from 'react';
 const CardInfo = (props) => {
   const { title, text, image } = props;
   
-  const [skewX, setSkewX] = useState(0);
-  const [skewY, setSkewY] = useState(0);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
 
   const handleMouseMove = (e) => {
     const { offsetX, offsetY, target } = e.nativeEvent;
     const { offsetWidth, offsetHeight } = target;
 
-    console.log("X: ", offsetX);
-    console.log("Y" ,offsetY);
+    const centerX = offsetWidth / 2;
+    const centerY = offsetHeight / 2;
 
-    let skewXValue = 0;
-    let skewYValue = 0;
+    const relativeX = offsetX - centerX;
+    const relativeY = offsetY - centerY;
 
-    if (offsetX < 350 && offsetY < 150) {
-      skewXValue = ((offsetX / offsetWidth) - 0.5) * 20;
-      skewYValue = ((offsetY / offsetHeight) - 0.5) * 20;
-    } else if (offsetX > 350 && offsetY < 150) {
-      skewXValue = (((offsetX / offsetWidth) - 0.5) * 20);
-      skewYValue = -(((offsetY / offsetHeight) - 0.5) * 20);
-    }else if (offsetX > 350 && offsetY > 150) {
-      skewXValue = -(((offsetX / offsetWidth) - 0.5) * 20);
-      skewYValue = -(((offsetY / offsetHeight) - 0.5) * 20);
-    }else if (offsetX < 350 && offsetY > 150) {
-      skewXValue = (((offsetX / offsetWidth) - 0.5) * 20);
-      skewYValue = -(((offsetY / offsetHeight) - 0.5) * 20);
+    let angleX, angleY;
+
+    if (relativeX >= 0 && relativeY < 0) { 
+      angleX = (relativeY / centerY) * 25;
+      angleY = (-relativeX / centerX) * 25;
+    } else if (relativeX < 0 && relativeY < 0) { 
+      angleX = (relativeY / centerY) * 25;
+      angleY = (-relativeX / centerX) * 25;
+    } else if (relativeX < 0 && relativeY >= 0) { 
+      angleX = (-relativeY / centerY) * 25;
+      angleY = (-relativeX / centerX) * 25;
+    } else { 
+      angleX = (-relativeY / centerY) * 25;
+      angleY = (-relativeX / centerX) * 25;
     }
-    
-    setSkewX(skewXValue);
-    setSkewY(skewYValue);
+
+    setRotateX(angleX);
+    setRotateY(angleY);
   };
 
   const handleMouseLeave = () => {
-    setSkewX(0);
-    setSkewY(0);
+    setRotateX(0);
+    setRotateY(0);
   };
 
   return (
-    <div className="relative w-[750px] h-[350px] bg-white " onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      <div className="absolute top-0 left-0 w-full h-full bg-blue-500 transform skew-x-0 skew-y-0 transition-transform duration-300"
-        style={{ transform: `skewX(${skewX}deg) skewY(${skewY}deg)` }}>
+    <div className="relative w-[750px] h-[350px] bg-inherit m-[60px] hover:cursor-pointer" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+      <div className="absolute top-0 left-0 w-full h-full bg-white shadow-lg transform rotate-x-0 rotate-y-0 transition-transform duration-300"
+        style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
 
-            <div className=''>
-               <img className='w-1/5 h-full object-cover'
-            src={image}
-            >
-               </img>
-
-                <div className='flex flex-col'>
-              <h1>{title}</h1>
-              <p>{text}</p>
+            <div className='flex flex-row'>
+               <img className='justify-end h-full w-[11.5rem] object-cover object-center'
+                src={image}
+                alt="Card"
+                />
+                <div className='flex flex-col ml-8 p-8'>
+              <h1 className='text-2xl'>{title}</h1>
+              <p  className='text-base'>{text}</p>
                </div>
-   
-          </div>
+  
+            </div>
 
         </div>
       

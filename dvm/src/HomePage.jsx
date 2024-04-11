@@ -7,7 +7,7 @@ import Position from './componenets/Position'
 
 function HomePage() {
   return (
-    <div className="text-6xl">
+    <div className="text-6xl bg-inherit">
         <div className='nav'>
             <Navbar/>
             <Page/>
