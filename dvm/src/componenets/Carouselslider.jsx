@@ -1,53 +1,51 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from 'react';
 
-const Slider = () => {
+const CarouselSlider = ({ slides, slidesToShow }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const sliderItems = [
-    {
-      id: 1,
-      caption: "All the Latest Products In One Place",
-    
-    },
-    {
-      id: 2,
-      caption: "Grab the Latest Products",
-    
-    },
-    {
-      id: 3,
-      caption: "Find All Your Needs In One Place",
-    
-    },
-  ];
-
-  const nextSlide = () => {
-    setCurrentSlide(currentSlide === sliderItems.length - 1 ? 0 : currentSlide + 1);
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? sliderItems.length - 1 : currentSlide - 1);
+  const goToPrevSlide = () => {
+    setCurrentSlide((prevIndex) => Math.max(prevIndex - slidesToShow, 0));
   };
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prevIndex) => Math.min(prevIndex + slidesToShow, slides.length - slidesToShow));
+  };
+
+  const slideWidth = 100 / slidesToShow; // Calculate the width of each slide
 
   return (
     <div className="relative">
-      {sliderItems.map((item, index) => (
-        <div key={item.id} className={`slide ${index === currentSlide ? 'block' : 'hidden'}`}>
-          <img className="w-full" src={item.img} alt={`Slide ${item.id}`} />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl">{item.caption}</h1>
-            <p className="mt-2">A single place for all your products. Discover more products on our products section</p>
-            <button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-              <a href="#product-list">Discover More</a>
-            </button>
-          </div>
+      <div className="overflow-hidden relative">
+        <div className="flex transition-transform ease-in-out duration-300" style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}>
+          {slides.map((slide, index) => (
+            <div key={index} className={`flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/${slidesToShow} px-2`} style={{ width: `${slideWidth}%` }}>
+              <div className="bg-gray-100 rounded-lg shadow-lg p-4">
+                <img src={slide.image} alt={slide.title} className="rounded-lg mb-2" />
+                <h2 className="text-lg font-semibold">{slide.title}</h2>
+                <p className="text-gray-700">{slide.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-      <button className="absolute top-1/2 transform -translate-y-1/2 left-0" onClick={prevSlide}>Prev</button>
-      <button className="absolute top-1/2 transform -translate-y-1/2 right-0" onClick={nextSlide}>Next</button>
+      </div>
+      <div className="absolute inset-y-0 flex items-center justify-between px-4">
+        <button className="text-gray-600 hover:text-gray-900 focus:outline-none" onClick={goToPrevSlide}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button className="text-gray-600 hover:text-gray-900 focus:outline-none" onClick={goToNextSlide}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Slider;
+export default CarouselSlider;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './Carouselslider'
+import Carouselslider from './Carouselslider'
 
 const slides = [
     {
@@ -44,7 +44,7 @@ const slides = [
 function Blog() {
   return (
     <div>
-        <Slider/>
+        <Carouselslider slides ={slides} slidesToSeen={"2"}/>
     </div>
   )
 }
