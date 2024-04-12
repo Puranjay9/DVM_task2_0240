@@ -5,10 +5,12 @@ import LocationsPage from './componenets/LocationPage'
 import Info from './componenets/Info'
 import Position from './componenets/Position'
 import Blog from './componenets/Blog'
+import { useColorMode } from './ColorModeContextProvider';
 
 function HomePage() {
+  const { colorMode} = useColorMode();
   return (
-    <div className="text-6xl bg-inherit">
+    <div className={``}>
         <div className='nav'>
             <Navbar/>
             <Page/>

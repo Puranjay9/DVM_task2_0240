@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useColorMode } from '../ColorModeContextProvider';
 
 const content = [
   {
@@ -25,6 +26,7 @@ const content = [
 ];
 
 const Slideshow = () => {
+  const { colorMode} = useColorMode();
     const [activeIndex, setActiveIndex] = useState(0);
     const [loading , setLoading ] = useState(0);
 
@@ -48,7 +50,7 @@ const Slideshow = () => {
     }, [activeIndex]);
 
     return (
-      <div className="flex flex-row bg-blue-900 text-white p-8 overflow-hidden h-[900px] rounded-t-xl shadow-t-3xl">
+      <div className={`flex flex-row  p-8 overflow-hidden h-[900px] rounded-t-xl shadow-t-3xl  ${colorMode ?'bg-[#ceaa53] text-[#1f1c16]' : 'bg-blue-900 text-white'}`}>
         
         <div className="flex-1 ml-6 mr-0">
           <div className='flex text-7xl flex-col'>
@@ -63,7 +65,7 @@ const Slideshow = () => {
           </div>
         </div>
 
-        <div className='flex-1 flex-col p-2 text-white ml-0 mt-11 mr-11 '>
+        <div className='flex-1 flex-col p-2 ml-0 mt-11 mr-11 '>
           {content.map((section, index) => (
             <div key={index} className="relative mb-6">
               <h1 
@@ -73,7 +75,7 @@ const Slideshow = () => {
                 {section.title}
               </h1>
               {activeIndex === index ? (
-                <p className="text-2xl text-blue-200 m-11 ml-0">{section.text}</p>
+                <p className="text-2xl m-11 ml-0">{section.text}</p>
               ) : null}
               <div className="h-[1.5px] bg-slate-500 w-full overflow-hidden">
                 <div 
