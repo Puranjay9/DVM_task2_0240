@@ -6,9 +6,13 @@ const AnimationItem = ({ index, scrollPos , title , images }) => {
 
   return (
     <div
-      className="w-24 h-24 bg-gray-300 m-4"
+      className="w-[300px] h-24 bg-white-300 m-4"
       style={{ transform: `translateX(${movement}px)` }}
-    >
+    >   
+        <img
+        src={images}
+        className="rounded-3xl"
+        ></img>
         <h1>{title}</h1>
     </div>
   );

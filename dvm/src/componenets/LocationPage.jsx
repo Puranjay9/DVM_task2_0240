@@ -5,7 +5,7 @@ import AnimaButton from './AnimaButton';
 const LocationsPage = () => {
   
   return (
-    <div className="bg-white text-black mt-[170px]">
+    <div className="bg-inherit text-black mt-[170px]">
       <div className="container mx-auto ml-[100px] relative">
         <div className=''>
             <h2 className="text-base font-bold mb-2 text-blue-500">OUR LOCATIONS</h2>

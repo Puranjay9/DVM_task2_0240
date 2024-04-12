@@ -4,35 +4,35 @@ import ParallaxRow from './Animation/Parrallex';
 const Row1 = [
   {
     title: "Belgium",
-    image: "",
+    image: "/countries/img1.png",
   },
   {
     title: "Portugal",
-    image: "",
+    image: "/countries/img2.png",
   },
   {
     title: "Greece",
-    image: "",
+    image: "/countries/img3.png",
   },
   {
     title: "France",
-    image: "",
+    image: "/countries/img4.png",
   },
   {
     title: "United Kingdom",
-    image: "",
+    image: "/countries/img5.png",
   },
   {
     title: "Turkey",
-    image: "",
+    image: "/countries/img6.png",
   },
   {
     title: "Spain",
-    image: "",
+    image: "/countries/img7.png",
   },
   {
     title: "Germany",
-    image: "",
+    image: "/countries/img8.png",
   },
 ];
 

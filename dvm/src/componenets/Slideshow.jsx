@@ -38,13 +38,12 @@ const Slideshow = () => {
             return prevProgress + 1;
           }
         });
-      }, 100); // Adjust the interval as needed
+      }, 100); 
   
       return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
-      // Reset loading to 0 immediately when the activeIndex changes
       setLoading(0);
     }, [activeIndex]);
 
