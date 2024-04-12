@@ -4,6 +4,7 @@ import Page from './componenets/page'
 import LocationsPage from './componenets/LocationPage'
 import Info from './componenets/Info'
 import Position from './componenets/Position'
+import Blog from './componenets/Blog'
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
             <LocationsPage/>
             <Info/>
             <Position/>
+            <Blog/>
         </div>
     </div>
   )

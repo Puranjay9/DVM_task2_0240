@@ -48,7 +48,7 @@ function CountryAni() {
 
   return (
     <div
-      className="h-1/6 overflow-y-scroll "
+      className="h-1/6 overflow-hidden "
       onScroll={handleScroll}
       style={{
         scrollbarWidth: "none",

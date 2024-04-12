@@ -9,7 +9,7 @@ const ParallaxRow = ({ scrollPos, titles, images }) => {
   const containerPosition = (scrollPos - (window.innerWidth - containerWidth) / 2) % loopWidth;
 
   return (
-    <div className="flex items-center" style={{ width: `${containerWidth}px`, position: 'relative', left: `${-containerPosition}px` }}>
+    <div className="flex items-center pr-9" style={{ width: `${containerWidth}px`, position: 'relative', left: `${-containerPosition}px` }}>
       {titles.map((title, index) => (
         <AnimationItem
           key={index}
