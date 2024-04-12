@@ -1,5 +1,6 @@
 import React from 'react'
 import Carouselslider from './Carouselslider'
+import AnimaButton from './AnimaButton'
 
 const slides = [
     {
@@ -43,8 +44,21 @@ const slides = [
 
 function Blog() {
   return (
-    <div>
-        <Carouselslider slides ={slides} slidesToSeen={"2"}/>
+    <div className='relative'>
+        <div className=' left-0 z-[0] rounded-tr-[40px]  rounded-br-[60px] bg-blue-900 w-3/4 h-[125vh]'>
+        <div className=''>
+            <h1 className='text-xl'>BLOG</h1>
+            <h1>What’s New at MPL</h1>
+                <div>
+                <AnimaButton text={"All Articles "}/>
+                </div>
+            </div>
+
+            <div className='absolute'>
+        <Carouselslider slides ={slides} />
+        </div>
+        </div>
+        
     </div>
   )
 }
