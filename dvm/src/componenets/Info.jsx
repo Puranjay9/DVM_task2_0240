@@ -63,6 +63,35 @@ function Info() {
           </div>
         </div>
       </div>
+
+      <div className='relative h-[200vh] mt-[10vh] mb-[20vh]'>
+        <div className='h-1/2'></div>
+    <div className=' absolute top-[26.7vh] left-0 w-11/12 rounded-tr-[70px] rounded-br-[70px] h-[110vh]  overflow-hidden border-white border-[1px] border-l-0'>
+        <div className='h-2/3 w-full relative'>
+            <video className="justify-end w-full h-full object-cover text-white absolute inset-0" autoPlay loop>
+                <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
+            </video>
+            <div className='absolute bottom-7 left-7 text-white'>
+                <h1>A Unique</h1>
+                <h1>Company Culture</h1>
+            </div>
+        </div>
+            <div className='bg-blue-950 h-1/3'>
+
+            </div>
+          </div>
+
+          <div className='bottom-0 w-full h-1/2 bg-blue-950 z-[-1] flex items-center justify-center'>
+    <div className='text-white w-[1/2]'>
+        <p className="text-center">
+            The MPL family: a team that consists of more than 700 differentiators, spread across the globe. They all have one thing in common: a passion for logistics! They're highly skilled and hands-on, driven by the goal of making logistics more efficient and reliable, and with a commitment to putting our customers first. We do this by using our creative solutions to gain customers' trust, and deliver satisfaction.
+        </p>
+    </div>
+</div>
+
+
+        </div>
+        
     </div>
   );
 }

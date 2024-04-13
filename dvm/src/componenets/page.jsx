@@ -6,7 +6,7 @@ function Page() {
     const { colorMode} = useColorMode();
   return (
    <div className={`mt-[90px] pt-8 border-black border-solid  ${colorMode ?'bg-[#2c2713] text-white' : 'bg-white text-slate-600'}`}>
-    <div className='flex h-screen z-1 w-11/12 border-t border-r border-solid border-[#00112e] rounded-tr-[6rem] z-[1] '> {/*text and the video */}
+    <div className='flex h-screen z-1 w-11/12 border-t border-r border-solid border-[#00112e] rounded-tr-[6rem] z-[1] overflow-hidden '> {/*text and the video */}
         <div className='flex-1 flex  text-txt-clr '>
             <div className="flex-1 flex items-center justify-end">
                 <video className=" justify-end w-6/12 h-full mr-0 z-0 object-cover text-white" autoPlay loop>
