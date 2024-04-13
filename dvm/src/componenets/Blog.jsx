@@ -1,6 +1,7 @@
 import React from 'react'
 import Carouselslider from './Carouselslider'
 import AnimaButton from './AnimaButton'
+import { useColorMode } from '../ColorModeContextProvider';
 
 const slides = [
     {
@@ -43,9 +44,11 @@ const slides = [
 ]
 
 function Blog() {
+    const { colorMode } = useColorMode();
+
   return (
     <div className='relative'>
-        <div className=' left-0 z-[0] rounded-tr-[40px]  rounded-br-[60px] bg-blue-950 w-3/4 h-[140vh] max-sm:h-[100vh]'>
+        <div className={`left-0 z-[0] rounded-tr-[40px]  rounded-br-[60px] w-3/4 h-[140vh] max-sm:h-[100vh] transition-all duration-300 ${colorMode ? ' bg-[#ceaa53]' : '  bg-blue-950'}`}>
         <div className='ml-11 '>
             <h1 className='text-base text-white '>BLOG</h1>
             <h1 className=' text-5xl text-white mb-14'>What’s New at MPL</h1>

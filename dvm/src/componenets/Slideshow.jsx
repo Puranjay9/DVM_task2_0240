@@ -50,7 +50,7 @@ const Slideshow = () => {
   }, [activeIndex]);
 
   return (
-    <div className={`flex flex-row max-md:flex-col p-8 overflow-hidden h-[100vh] max-2xl:h-auto rounded-t-xl shadow-t-3xl ${colorMode ? 'bg-[#ceaa53] text-[#1f1c16]' : 'bg-blue-900 text-white'}`} style={{ width: '100%', overflowX: 'hidden' }}>
+    <div className={`flex flex-row max-md:flex-col p-8 overflow-hidden h-[100vh] max-2xl:h-auto rounded-t-xl shadow-t-3xl transition-all duration-300 ${colorMode ? 'bg-[#ceaa53] text-[#1f1c16]' : 'bg-blue-900 text-white'}`} style={{ width: '100%', overflowX: 'hidden' }}>
       <div className="flex-1 ml-6 mr-0">
         <div className='flex text-7xl flex-col max-sm:text-4xl'>
           <h1>We’re Different</h1>

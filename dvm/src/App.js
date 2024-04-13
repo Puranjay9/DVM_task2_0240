@@ -18,7 +18,7 @@ function App() {
 
   return (
     
-    <div className={`overflow-hidden  w-[100vw] ${colorMode ?'bg-[#2c2713]' : 'bg-white'}`}>
+    <div className={`overflow-hidden  w-[100vw] transition-all duration-300 ${colorMode ?'bg-[#2c2713]' : 'bg-white'}`}>
       <div>
       {loading ? (
         <Preloader onLoad={handleLoad} />

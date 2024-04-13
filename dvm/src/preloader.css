@@ -58,3 +58,19 @@
     transform: translateY(-100%);
     border-bottom: calc(50% * sqrt(0.25 + 1)); 
 }
+@media screen and (max-width: 640px) {
+    .preloader-container {
+      width: auto;
+      max-width: 100%;
+    }
+  
+    .preloader-text {
+      font-size: 30px;
+    }
+  
+    .box {
+      width: 80%;
+      height: 35%;
+    }
+  }
+  

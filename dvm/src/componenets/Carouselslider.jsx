@@ -65,6 +65,15 @@ const CarouselSlider = ({ slides }) => {
           ))}
         </div>
       </div>
+      <div className='absolute left-1/2 items-center flex mt-3'>
+        {slides.map((slide,index) => (
+          <button
+          key={index}
+          onClick={() => goToSlide(index)}
+          className={` rounded-full bg-gray-300 mx-1 ${index === currentSlide ? 'w-3 h-3' : 'w-2 h-2'}`}
+        ></button>
+        ))}
+      </div>
       
     </div>
   );

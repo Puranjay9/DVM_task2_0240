@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useColorMode } from '../../ColorModeContextProvider';
 
-const AnimationItem = ({ index, scrollPos, title, image }) => {
+const AnimationItem = ({ index, scrollPos, title, image , sign  }) => {
   const [isHovered, setIsHovered] = useState(false);
   const { colorMode } = useColorMode();
 
-  const movement = scrollPos * 0.1 * (index + 1);
+  const movement = scrollPos * 0.1 * (index + 1) * (sign === "-" ? 1 : -1);
 
   const textColor = colorMode ? '#ceaa53' : '#00112e';
 
