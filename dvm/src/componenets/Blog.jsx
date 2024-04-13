@@ -54,7 +54,7 @@ function Blog() {
                 </div>
             </div>
 
-            <div className='absolute'>
+            <div className='absolute max-sm:left-0 max-sm:p-0 max-sm:m-0'>
         <Carouselslider slides ={slides} />
         </div>
         </div>

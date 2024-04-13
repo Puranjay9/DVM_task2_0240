@@ -6,6 +6,7 @@ import Info from './componenets/Info';
 import Position from './componenets/Position';
 import Blog from './componenets/Blog';
 import { useColorMode } from './ColorModeContextProvider';
+import Footer from './componenets/Footer';
 
 function HomePage() {
   const { colorMode } = useColorMode();
@@ -17,13 +18,7 @@ function HomePage() {
       <Info />
       <Position />
       <Blog />
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .w-full {
-            width: 100vw;
-          }
-        }
-      `}</style>
+      <Footer/>
     </div>
   );
 }

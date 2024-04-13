@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React , {useState} from 'react'
 
-const CardInfo = (props) => {
-  const { title, text, image } = props;
-  
-  const [rotateX, setRotateX] = useState(0);
+function NewCard2() {
+
+    const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 
   const handleMouseMove = (e) => {
@@ -44,24 +43,15 @@ const CardInfo = (props) => {
     setRotateY(0);
   };
 
-  return (
-    <div className=" z-10 relative flex flex-col sm:flex-row w-[45vw] bg-inherit m-[60px] hover:cursor-pointer max-sm:ml-0 max-sm:w-full max-sm:m-2 sm:w-[calc(45vw - 1rem)] sm:m-4 trasnition duration-[120ms] ease-linear" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
-    <div className="w-full sm:w-1/3 sm:order-1 overflow-hidden max-sm:h-1/2">
-      <img className={`w-full h-full flex object-cover max-sm:h-1/2 ${image}`} src={image} alt="Card" />
-    </div>
-    <div className="w-full sm:w-2/3 sm:order-2 bg-white shadow-lg">
-      <div className='flex flex-col p-8'>
-        <h1 className='text-2xl'>{title}</h1>
-        <p className='text-base'>{text}</p>
-      </div>
-    </div>
-  </div>
-
   
+  return (
+    <div className={`z-10 relative shadow-lg bg-[#003690] flex flex-col sm:flex-row w-[40vw] p-[90px] m-[60px] rounded-tr-[50px] hover:cursor-pointer max-sm:ml-0 max-sm:w-full max-sm:m-2 sm:w-[calc(45vw - 1rem)] sm:m-4 trasnition duration-[120ms] ease-linear `} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
+    <div className={`text-white`}>
+        <h1 className='text-base font-semibold mb-5'>Our Services</h1>
+        <h1 className='text-3xl'>How We Move</h1>
+    </div>
+    </div>
+  )
+}
 
-
-
-  );
-};
-
-export default CardInfo;
+export default NewCard2

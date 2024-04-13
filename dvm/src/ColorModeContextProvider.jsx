@@ -65,7 +65,7 @@ export const ColorModeButton= () => {
     }
   
     return (
-      <button className={`relative ${buttonSize} fill-green-950 hover:font-bold py-2 px-4 rounded-full transition-all ${colorMode ? 'bg-[#1f1c16] text-[#ceaa53] hover:bg-blue-950 ' : 'hover:bg-[#ceaa53] bg-white'}`} onClick={toggleColorMode}
+      <button className={` z-20 relative ${buttonSize} fill-green-950 hover:font-bold py-2 px-4 rounded-full transition-all ${colorMode ? 'bg-[#1f1c16] text-[#ceaa53] hover:bg-blue-950 ' : 'hover:bg-[#ceaa53] bg-white'}`} onClick={toggleColorMode}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       >
