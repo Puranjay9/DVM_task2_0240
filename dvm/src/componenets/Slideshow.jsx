@@ -6,7 +6,7 @@ const content = [
     title: "We Believe in People",
     text: "We believe in our people because they are our greatest asset. At MPL, we are not just a company; we are a family. Each and every one of us shares our unique MPL culture, in which everyone is valued, supported, and empowered to reach their full potential.",
     image: "/img/img1.jpg",
-    position :"mt"
+    position: "mt"
   },
   {
     title: "We Solve Each and Any Shipping Problem",
@@ -26,68 +26,66 @@ const content = [
 ];
 
 const Slideshow = () => {
-  const { colorMode} = useColorMode();
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [loading , setLoading ] = useState(0);
+  const { colorMode } = useColorMode();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [loading, setLoading] = useState(0);
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setLoading((prevProgress) => {
-          if (prevProgress >= 100) {
-            setActiveIndex((prevIndex) => (prevIndex === content.length - 1 ? 0 : prevIndex + 1));
-            return 0;
-          } else {
-            return prevProgress + 1;
-          }
-        });
-      }, 100); 
-  
-      return () => clearInterval(interval);
-    }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoading((prevProgress) => {
+        if (prevProgress >= 100) {
+          setActiveIndex((prevIndex) => (prevIndex === content.length - 1 ? 0 : prevIndex + 1));
+          return 0;
+        } else {
+          return prevProgress + 1;
+        }
+      });
+    }, 100);
 
-    useEffect(() => {
-      setLoading(0);
-    }, [activeIndex]);
+    return () => clearInterval(interval);
+  }, []);
 
-    return (
-      <div className={`flex flex-row  p-8 overflow-hidden h-[900px] rounded-t-xl shadow-t-3xl  ${colorMode ?'bg-[#ceaa53] text-[#1f1c16]' : 'bg-blue-900 text-white'}`}>
-        
-        <div className="flex-1 ml-6 mr-0">
-          <div className='flex text-7xl flex-col'>
-            <h1>We’re Different</h1>
-            <h1>Because</h1>
+  useEffect(() => {
+    setLoading(0);
+  }, [activeIndex]);
 
-            <img
-              src={content[activeIndex].image}
-              alt="Associated content"
-              className="rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 mt-[230px]"
-            />
-          </div>
-        </div>
-
-        <div className='flex-1 flex-col p-2 ml-0 mt-11 mr-11 '>
-          {content.map((section, index) => (
-            <div key={index} className="relative mb-6">
-              <h1 
-                className="text-4xl cursor-pointer mb-8"
-                onClick={() => setActiveIndex(index)}
-              >
-                {section.title}
-              </h1>
-              {activeIndex === index ? (
-                <p className="text-2xl m-11 ml-0">{section.text}</p>
-              ) : null}
-              <div className="h-[1.5px] bg-slate-500 w-full overflow-hidden">
-                <div 
-                  className={`h-[1.5px] bg-white transition-all duration-500 ease-in-out`}
-                  style={{ width: `${activeIndex === index ? loading : 0}%` }}
-                ></div>
-              </div>
-            </div>
-          ))}
+  return (
+    <div className={`flex flex-row max-md:flex-col p-8 overflow-hidden h-[100vh] max-2xl:h-auto rounded-t-xl shadow-t-3xl ${colorMode ? 'bg-[#ceaa53] text-[#1f1c16]' : 'bg-blue-900 text-white'}`} style={{ width: '100%', overflowX: 'hidden' }}>
+      <div className="flex-1 ml-6 mr-0">
+        <div className='flex text-7xl flex-col max-sm:text-4xl'>
+          <h1>We’re Different</h1>
+          <h1>Because</h1>
+          <img
+            src={content[activeIndex].image}
+            alt="Associated content"
+            className="rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 mt-[230px] max-sm:mt-[5vh]"
+          />
         </div>
       </div>
-    );
+
+      <div className='flex-1 flex-col p-2 ml-0 mt-11 mr-11 max-sm:h-[120vh] max-sm:mt-[10vh]'>
+        {content.map((section, index) => (
+          <div key={index} className="relative mb-6">
+            <h1
+              className="text-4xl cursor-pointer mb-8 max-sm:text-2xl"
+              onClick={() => setActiveIndex(index)}
+            >
+              {section.title}
+            </h1>
+            {activeIndex === index ? (
+              <p className="text-2xl m-11 ml-0 max-sm:text-sm">{section.text}</p>
+            ) : null}
+            <div className="h-[1.5px] bg-slate-500 w-full overflow-hidden">
+              <div
+                className={`h-[1.5px] bg-white transition-all duration-500 ease-in-out`}
+                style={{ width: `${activeIndex === index ? loading : 0}%` }}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Slideshow;

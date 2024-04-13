@@ -12,9 +12,9 @@ const card1 =
 
 function Position() {
   return (
-    <div className='flex flex-row m-11 p-11 text-[#00235d]'>
-      <div className='flex flex-col mr-[200px] '>
-        <h1 className='text-[#00358d] text-base font-bold'>VACANCIES</h1>
+    <div className='flex flex-row m-11 p-11 text-[#00235d] max-sm:flex-col max-sm:m-2 max-sm:p-2'>
+      <div className='flex flex-col mr-[200px] max-sm:mr-0'>
+        <h1 className='text-[#00358d] text-base font-bold '>VACANCIES</h1>
         <h1 >Join</h1>
         <h1>our Team</h1>
         <div className='mt-5'>

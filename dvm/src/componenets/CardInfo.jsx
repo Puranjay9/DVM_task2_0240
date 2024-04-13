@@ -16,20 +16,23 @@ const CardInfo = (props) => {
     const relativeX = offsetX - centerX;
     const relativeY = offsetY - centerY;
 
+    const distanceFromCenter = Math.sqrt(Math.pow(relativeX, 2) + Math.pow(relativeY, 2));
+    const distanceFactor = Math.min(distanceFromCenter / (centerX + centerY), 1);
+
     let angleX, angleY;
 
     if (relativeX >= 0 && relativeY < 0) { 
-      angleX = (relativeY / centerY) * 25;
-      angleY = (-relativeX / centerX) * 25;
+      angleX = (relativeY / centerY) * 30 * distanceFactor;
+      angleY = (-relativeX / centerX) * 30 * distanceFactor;
     } else if (relativeX < 0 && relativeY < 0) { 
-      angleX = (relativeY / centerY) * 25;
-      angleY = (-relativeX / centerX) * 25;
+      angleX = (relativeY / centerY) * 30 * distanceFactor;
+      angleY = (-relativeX / centerX) * 30 * distanceFactor;
     } else if (relativeX < 0 && relativeY >= 0) { 
-      angleX = (-relativeY / centerY) * 25;
-      angleY = (-relativeX / centerX) * 25;
+      angleX = (-relativeY / centerY) * 30 * distanceFactor;
+      angleY = (-relativeX / centerX) * 30 * distanceFactor;
     } else { 
-      angleX = (-relativeY / centerY) * 25;
-      angleY = (-relativeX / centerX) * 25;
+      angleX = (-relativeY / centerY) * 30 * distanceFactor;
+      angleY = (-relativeX / centerX) * 30 * distanceFactor;
     }
 
     setRotateX(angleX);
@@ -42,7 +45,7 @@ const CardInfo = (props) => {
   };
 
   return (
-    <div className="relative w-[750px] h-[350px] bg-inherit m-[60px] hover:cursor-pointer" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+    <div className="relative w-[45vw] h-[40vh] bg-inherit m-[60px] hover:cursor-pointer max-sm:w-full max-sm:m-2" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <div className="absolute top-0 left-0 w-full h-full bg-white shadow-lg transform rotate-x-0 rotate-y-0 transition-transform duration-300"
         style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
 

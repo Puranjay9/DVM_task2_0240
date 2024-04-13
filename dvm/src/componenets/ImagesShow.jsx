@@ -21,7 +21,7 @@ function ImagesShow({ images, delay = 3000 ,letter }) {
       <div className="overflow-hidden ">
         <img
           className={`slideshow-image transition-all ease-out duration-300 ${
-            isTransitioning ? `translate-x-0 opacity-1` : `translate--full opacity-0`
+            isTransitioning ? `translate-x-0 opacity-1` : `translate-x-full opacity-0`
           }`}
           src={images[currIndex]}
           alt={`Slide ${currIndex + 1}`}
