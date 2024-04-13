@@ -6,7 +6,7 @@ const AnimationItem = ({ index, scrollPos , title , image }) => {
 
   return (
     <div
-      className="w-auto h-24 bg-white-300 m-4 flex flex-row items-center justify-center"
+      className="w-auto h-24 bg-white-300 m-4 flex flex-row items-center justify-center translation-all "
       style={{ transform: `translateX(${movement}px)` }}
     >   
         <img

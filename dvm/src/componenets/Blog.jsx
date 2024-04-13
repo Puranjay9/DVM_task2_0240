@@ -45,10 +45,10 @@ const slides = [
 function Blog() {
   return (
     <div className='relative'>
-        <div className=' left-0 z-[0] rounded-tr-[40px]  rounded-br-[60px] bg-blue-900 w-3/4 h-[125vh]'>
-        <div className=''>
-            <h1 className='text-xl'>BLOG</h1>
-            <h1>What’s New at MPL</h1>
+        <div className=' left-0 z-[0] rounded-tr-[40px]  rounded-br-[60px] bg-blue-950 w-3/4 h-[140vh] max-sm:h-[100vh]'>
+        <div className='ml-11 '>
+            <h1 className='text-base text-white '>BLOG</h1>
+            <h1 className=' text-5xl text-white mb-14'>What’s New at MPL</h1>
                 <div>
                 <AnimaButton text={"All Articles "}/>
                 </div>

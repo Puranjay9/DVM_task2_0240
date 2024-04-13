@@ -46,15 +46,17 @@ const CardInfo = (props) => {
 
   return (
     <div className="relative w-[45vw] h-[40vh] bg-inherit m-[60px] hover:cursor-pointer max-sm:w-full max-sm:m-2" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-      <div className="absolute top-0 left-0 w-full h-full bg-white shadow-lg transform rotate-x-0 rotate-y-0 transition-transform duration-300"
+      <div className="absolute top-0 left-0 w-full h-full max-sm:h-auto bg-white shadow-lg transform rotate-x-0 rotate-y-0 transition-transform duration-300"
         style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
 
-            <div className='flex flex-row'>
-               <img className='justify-end h-full w-[11.5rem] object-cover object-center'
+            <div className='flex flex-row max-sm:flex-col'>
+               <div>
+               <img className='justify-end h-full w-[11.5rem] flex object-cover max-sm:w-full max-sm:h-1/3'
                 src={image}
                 alt="Card"
                 />
-                <div className='flex flex-col ml-8 p-8'>
+               </div>
+                <div className='flex flex-col ml-8 p-8 max-sm:ml-0 max-sm:p-2 '>
               <h1 className='text-2xl'>{title}</h1>
               <p  className='text-base'>{text}</p>
                </div>

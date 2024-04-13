@@ -13,6 +13,9 @@ module.exports = {
       margin: {
         '145px': '145px',
       },
+      animation: {
+        'spin-custom': 'spin 7s linear infinite',
+      },
 
     },
   },

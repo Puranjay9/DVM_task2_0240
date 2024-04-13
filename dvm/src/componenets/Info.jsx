@@ -73,19 +73,26 @@ function Info() {
             <video className="justify-end w-full h-full object-cover text-white absolute inset-0" autoPlay loop>
                 <source src='Manuport_Logistics.mp4' type="video/mp4"></source>
             </video>
-            <div className='absolute bottom-7 left-7 text-white'>
+            <div className='absolute bottom-7 left-7 text-white text-9xl font-bold  max-sm:text-4xl'>
                 <h1>A Unique</h1>
                 <h1>Company Culture</h1>
             </div>
         </div>
-            <div className='bg-blue-950 h-1/3'>
-
+            <div className='bg-[#00112e] h-1/3'>
+                  <h1 className='w-2/3 text-7xl ml-10 mt-7 max-sm:text-4xl' style={{
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    backgroundImage: 'linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))'
+                  }}>
+                  With a heart for logistics and great teamwork
+                  </h1>
             </div>
           </div>
 
-          <div className='bottom-0 w-full h-1/2 bg-blue-950 z-[-1] flex items-center justify-center'>
+          <div className='bottom-0 w-full h-1/2 bg-[#00112e] z-[-1] flex items-center justify-center'>
     <div className='text-white w-[1/2]'>
-        <p className="text-center">
+        <p className="w-2/5  ml-[40vw] mt-[100px] text-left text-2xl max-sm:w-full max-sm:ml-4">
             The MPL family: a team that consists of more than 700 differentiators, spread across the globe. They all have one thing in common: a passion for logistics! They're highly skilled and hands-on, driven by the goal of making logistics more efficient and reliable, and with a commitment to putting our customers first. We do this by using our creative solutions to gain customers' trust, and deliver satisfaction.
         </p>
     </div>

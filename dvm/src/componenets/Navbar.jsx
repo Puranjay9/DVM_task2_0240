@@ -38,7 +38,7 @@ function Navbar() {
     return (
         <div className={`Nav fixed top-0 left-0 h-[30px] w-full z-10 align-middle  max-lg:opacity-90 z-5 ${windowWidth > 1024 ? `${visible ? 'translate-y-0 duration-1000' : '-translate-y-[100vh] duration-500'}` : ''} `}>
             <div className={` ${colorMode ? 'bg-[#2c2713] text-white' : 'bg-white text-slate-600'}`}>
-                <div className={`text-sm bg-slate-100 ${colorMode ? 'bg-[#86742e] text-[#ceaa53]' : 'bg-slate-100 text-blue-500'}`}>
+                <div className={`text-sm ${colorMode ? 'bg-[#86742e] text-[#ceaa53]' : 'bg-slate-100 text-blue-500'}`}>
                     <div className="flex justify-between items-center">
                         <div>
                             <button className="block lg:hidden" onClick={toggleMenu}>

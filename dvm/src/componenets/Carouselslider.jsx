@@ -40,26 +40,26 @@ const CarouselSlider = ({ slides }) => {
 
   return (
     <div className="relative m-11">
-      <div className=" flex items-center justify-end px-4">
-        <button className="bg-blue-950 text-gray-900 hover:bg-blue-500 focus:outline-none" onClick={goToPrevSlide}>
+      <div className=" flex items-center justify-end px-4 mr-12 mb-6 max-sm:hidden">
+        <button className="bg-blue-950 text-white hover:bg-blue-500 focus:outline-none m-3 w-14 h-14 rounded-full flex justify-center items-center " onClick={goToPrevSlide}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <button className="bg-blue-950 text-gray-900 hover:bg-blue-500 focus:outline-none" onClick={goToNextSlide}>
+        <button className="bg-blue-950 text-white hover:bg-blue-500 focus:outline-none m-3 w-14 h-14 rounded-full flex justify-center items-center" onClick={goToNextSlide}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
       <div className="overflow-hidden relative">
-        <div className="flex transition-transform ease-in-out duration-300" style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}>
+        <div className="flex transition-transform ease-in-out duration-300 max-sm:overflow-x-scroll" style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}>
           {slides.map((slide, index) => (
-            <div key={index} className={`flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/${slidesToShow} px-2`} style={{ width: `${slideWidth}%` }}>
-              <div className="bg-gray-100 rounded-lg shadow-lg p-4">
+            <div key={index} className={`flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/${slidesToShow} px-2 `} style={{ width: `${slideWidth}%` }}>
+              <div className="bg-gray-100 rounded-tr-[40px] shadow-lg  overflow-hidden">
                 <img src={slide.image} alt={slide.title} className="rounded-lg mb-2" />
-                <h2 className="text-2xl font-semibold">{slide.title}</h2>
-                <p className="text-black text-xl">{slide.text}</p>
+                <h2 className="text-2xl font-semibold p-2 w-11/12">{slide.title}</h2>
+                <p className="text-black text-base p-2 w-11/12">{slide.text}</p>
               </div>
             </div>
           ))}
