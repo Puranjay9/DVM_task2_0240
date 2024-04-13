@@ -45,8 +45,8 @@ function NewCard({title ,text , color , textcolor}) {
 
   
   return (
-    <div className={`z-10 relative shadow-lg bg-[${color}] flex flex-col sm:flex-row w-[40vw] p-[90px] m-[60px] rounded-bl-[50px] hover:cursor-pointer max-sm:ml-0 max-sm:w-full max-sm:m-2 sm:w-[calc(45vw - 1rem)] sm:m-4 trasnition duration-[120ms] ease-linear `} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
-    <div className={`text-${textcolor}`}>
+    <div className={`z-10 relative shadow-lg bg-[#ccd6e8] flex flex-col sm:flex-row w-[40vw] p-[90px] m-[60px] rounded-bl-[50px] hover:cursor-pointer max-sm:ml-0 max-sm:w-full max-sm:m-2 sm:w-[calc(45vw - 1rem)] sm:m-4 trasnition duration-[120ms] ease-linear `} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` }}>
+    <div className={`text-blue-950`}>
         <h1 className='text-base font-semibold mb-5'>{title}</h1>
         <h1 className='text-3xl'>{text}</h1>
     </div>

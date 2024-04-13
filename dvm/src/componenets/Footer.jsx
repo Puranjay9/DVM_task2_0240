@@ -14,8 +14,14 @@ function Footer() {
             </div>
         </div>
 
-        <div>{/*Last part */}
+        <div className='relative'>{/*Last part */}
+            <div>
+                <img>
+                </img>
+            </div>
+            <div>
 
+            </div>
         </div>
     </div>
   )
