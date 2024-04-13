@@ -57,6 +57,9 @@ function CountryAni() {
     >
       <div className="container mx-auto py-10">
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={"-"}/>
+        <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={""}/>
+        <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={"-"}/>
+        <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={""}/>
       </div>
     </div>
   );
