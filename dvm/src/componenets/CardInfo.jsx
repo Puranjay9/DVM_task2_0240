@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useColorMode } from '../ColorModeContextProvider';
 
 const CardInfo = (props) => {
+  const { colorMode } = useColorMode();
   const { title, text, image } = props;
   
   const [rotateX, setRotateX] = useState(0);
@@ -49,7 +51,7 @@ const CardInfo = (props) => {
     <div className="w-full sm:w-1/3 sm:order-1 overflow-hidden max-sm:h-1/2">
       <img className={`w-full h-full flex object-cover max-sm:h-1/2 ${image}`} src={image} alt="Card" />
     </div>
-    <div className="w-full sm:w-2/3 sm:order-2 bg-white shadow-lg">
+    <div className={`w-full sm:w-2/3 sm:order-2  shadow-lg ${colorMode ? ' bg-[#ceaa53]' : ' bg-white'}`}>
       <div className='flex flex-col p-8'>
         <h1 className='text-2xl'>{title}</h1>
         <p className='text-base'>{text}</p>

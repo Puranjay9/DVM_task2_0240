@@ -1,6 +1,7 @@
 import React from 'react'
 import CardInfo from './CardInfo'
 import AnimaButton from './AnimaButton'
+import { useColorMode } from '../ColorModeContextProvider';
 
 const card1 = 
   {
@@ -11,12 +12,14 @@ const card1 =
 
 
 function Position() {
+
+  const { colorMode } = useColorMode();
   return (
-    <div className='flex flex-row m-11 p-11 text-[#00235d] max-sm:flex-col max-sm:m-2 max-sm:p-2'>
-      <div className='flex flex-col mr-[200px] max-sm:mr-0'>
-        <h1 className='text-[#00358d] text-base font-bold '>VACANCIES</h1>
-        <h1 >Join</h1>
-        <h1>our Team</h1>
+    <div className={`flex flex-row m-11 p-11 text-[#00235d] max-sm:flex-col max-sm:m-2 max-sm:p-2 `}>
+      <div className={`flex flex-col mr-[200px] max-sm:mr-0 ${colorMode ? ' text-[#ceaa53]' : ' text-[#00235d]'}`}>
+        <h1 className=' text-base font-bold '>VACANCIES</h1>
+        <h1 className='text-7xl'>Join</h1>
+        <h1 className='text-6xl'>our Team</h1>
         <div className='mt-5'>
           <AnimaButton text={"Discover our Customer Portal"} />
           </div>

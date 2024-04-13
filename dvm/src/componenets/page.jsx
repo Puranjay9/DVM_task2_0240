@@ -29,7 +29,7 @@ function Page() {
             </div>
 
 
-            <div className={` ${!isSmallScreen ? 'absolute' : ''} text-9xl left-11 font-bold max-sm:text-4xl`}>
+            <div className={` ${!isSmallScreen ? 'absolute' : ''} text-9xl left-11 font-bold max-sm:text-4xl ${colorMode ? ' text-[#ceaa53]' : ' text-blue-950'}`}>
                 <h1>Freight</h1>
                 <h1>forwarding.</h1>
                 <div className='flex'>
