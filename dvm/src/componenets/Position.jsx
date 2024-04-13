@@ -23,7 +23,7 @@ function Position() {
       </div>
 
       <div>   {/* cards */}
-        <div className='justify-center items-center w-1/2'>
+        <div className='justify-center items-center w-1/2 max-sm:w-full'>
         <CardInfo title={card1.title} text={card1.text} image={card1.image}/>
         <CardInfo title={card1.title} text={card1.text} image={card1.image}/>
         <CardInfo title={card1.title} text={card1.text} image={card1.image}/>

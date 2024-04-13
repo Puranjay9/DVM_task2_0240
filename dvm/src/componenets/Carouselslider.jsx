@@ -36,7 +36,7 @@ const CarouselSlider = ({ slides }) => {
     setCurrentSlide((prevIndex) => Math.min(prevIndex + 1, slides.length - slidesToShow));
   };
 
-  const slideWidth = 100 / slidesToShow; // Calculate the width of each slide
+  const slideWidth = 90 / slidesToShow; 
 
   return (
     <div className="relative m-11">
@@ -55,7 +55,7 @@ const CarouselSlider = ({ slides }) => {
       <div className="overflow-hidden relative">
         <div className="flex transition-transform ease-in-out duration-300 max-sm:overflow-x-scroll" style={{ transform: `translateX(-${currentSlide * slideWidth}%)` }}>
           {slides.map((slide, index) => (
-            <div key={index} className={`flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/${slidesToShow} px-2 `} style={{ width: `${slideWidth}%` }}>
+            <div key={index} className={`flex-none w-full max-sm:w-1/2 max-sm:h-10/12 max-md:w-1/3 lg:w-1/${slidesToShow} px-2 `} style={{ width: `${slideWidth}%` }}>
               <div className="bg-gray-100 rounded-tr-[40px] shadow-lg  overflow-hidden">
                 <img src={slide.image} alt={slide.title} className="rounded-lg mb-2" />
                 <h2 className="text-2xl font-semibold p-2 w-11/12">{slide.title}</h2>
