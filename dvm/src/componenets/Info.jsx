@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImagesShow from './ImagesShow';
 import AnimaButton from './AnimaButton';
 import { useColorMode } from '../ColorModeContextProvider';
@@ -13,6 +13,8 @@ const slider1 = [
 ];
 
 function Info() {
+
+  const [scrollPos , setScrollPos] = useState(0);
 
   const { colorMode } = useColorMode();
   
@@ -36,12 +38,12 @@ function Info() {
 
 
       <div className='relative flex flex-row max-sm:flex-col max-sm:h-auto'>
-  <div className='flex justify-center items-center w-1/2 h-1/2 absolute left-[50px] top-[150px] max-sm:top-0 max-sm:h-11/12 max-sm:items-start max-sm:left max-sm:w-full max-sm: '>
+  <div className='flex justify-center items-center w-1/2 h-1/2 z-[7] absolute left-[50px] top-[150px] max-sm:top-0 max-sm:h-11/12 max-sm:items-start max-sm:left max-sm:w-full max-sm: '>
     <ImagesShow images={slider1}/>
   </div>
 
-    <div className='w-4/12 max-sm:h-1/3 max-sm:w-full'></div>
-  <div className={`  right-0 flex flex-col justify-center  w-8/12 h-screen rounded-tl-[60px] rounded-bl-[60px] items-center max-sm:w-full transition-all duration-300 ${colorMode ? ' bg-[#ceaa53]' : ' bg-blue-900'}`}>
+    
+  <div className={` translate-x-1/2 max-sm:translate-x-0 right-0 flex flex-col justify-center  w-8/12 h-screen rounded-tl-[60px] rounded-bl-[60px] items-center max-sm:w-full transition-all duration-300 ${colorMode ? ' bg-[#ceaa53]' : ' bg-blue-900'}`}>
    <div className='ml-[250px] w-3/5 max-sm:ml-5 max-sm:mt-56'>
    <h1 className='text-[#fff] text-[56px] text-left'>What we Move</h1>
     <p className='text-[#fff] text-[20px] mb-7 mt-7 text-left'>Behind every shipment lies a world of possibilities. Whether it's raw materials, chemicals, consumer goods, or anything else. What we ship isn’t just cargo, we carry your dreams.</p>

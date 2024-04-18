@@ -19,7 +19,7 @@ function Page() {
 
 
   return (
-   <div className={`mt-[90px] pt-8 border-black border-solid  ${colorMode ?'bg-[#2c2713] text-white' : 'bg-white text-slate-600'}`}>
+   <div className={`mt-[90px] pt-8 border-black border-solid w-full  ${colorMode ?'bg-[#2c2713] text-white' : 'bg-white text-slate-600'}`}>
     <div className='flex h-screen z-1 w-11/12 border-t border-r border-solid border-[#00112e] rounded-tr-[6rem] z-[1] overflow-hidden max-sm:h-1/2'> {/*text and the video */}
         <div className='flex-1 flex  text-txt-clr max-sm:flex-col max-sm:h-full'>
             <div className="flex-1 flex items-center justify-end">

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import ParallaxRow from './Animation/Parrallex';
 
@@ -48,14 +49,14 @@ function CountryAni() {
 
   return (
     <div
-      className="h-1/6 overflow-hidden "
+      className="h-1/6 overflow-hidden w-full translate-x-2/10"
       onScroll={handleScroll}
       style={{
         scrollbarWidth: "none",
         WebkitOverflowScrolling: "none",
       }}
     >
-      <div className="container mx-auto py-10">
+      <div className="container py-10">
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={"-"}/>
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={""}/>
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={"-"}/>

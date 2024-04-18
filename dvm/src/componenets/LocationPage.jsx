@@ -9,7 +9,7 @@ const LocationsPage = () => {
   
   return (
     <div className={`bg-inherit transition-all duration-300 ${colorMode ? ' text-[#ceaa53]' : ' text-blue-950'} mt-[170px] `}>
-      <div className="container mx-auto ml-[100px] max-sm:ml-2 relative">
+      <div className="container mx-auto ml-[5vw] max-sm:ml-2 relative">
         <div className=''>
             <h2 className={`text-base font-bold mb-2 transition-all duration-300  ${colorMode ? ' text-[#ceaa53]' : ' text-blue-600'}`}>OUR LOCATIONS</h2>
             <div className={`absolute top-1 left-[11.25rem] max-sm:left-2  w-7/12 h-full border-t border-r border-solid transition-all duration-300  ${colorMode ? ' border-[#ceaa53]' : ' border-[#00112e]'} rounded-tr-[6rem] z-[1] box-border visible max-sm:hidden`} ></div>

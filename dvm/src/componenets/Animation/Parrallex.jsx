@@ -8,7 +8,7 @@ const ParallaxRow = ({ scrollPos, titles, images, sign }) => {
   const itemCount = extendedTitles.length;
   const loopWidth = itemCount * 200;
   const containerWidth = 3 * loopWidth;
-  const scrollSpeedFactor = 0.15;
+  const scrollSpeedFactor = 0.9;
 
   const [containerPosition, setContainerPosition] = useState(0);
 
@@ -27,11 +27,11 @@ const ParallaxRow = ({ scrollPos, titles, images, sign }) => {
     };
   }, [scrollPos, containerWidth, scrollSpeedFactor]);
 
-  const initialPosition = sign === "" ? -1300 : 0;
-  const inertiaDuration = 1000; 
+  const initialPosition = sign === "" ? -6500 : 3000;
+  const inertiaDuration = 2500; 
 
   return (
-    <div className="overflow-hidden pr-9">
+    <div className="overflow-hidden pr-9 w-full">
       <div className="flex" style={{ 
         width: `${containerWidth}px`, 
         transform: `translateX(${sign}${containerPosition}px)`, 
