@@ -7,6 +7,9 @@ function Navbar() {
     const [showMenu, setShowMenu] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [hoveredItems, setHoveredItems] = useState(Array(8).fill(false)); 
+    const [opacity , setOpacity] = useState(0);
+  const [trans , setTrans] = useState("translateY(100px)")
+
 
   const handleMouseEnter = index => {
     const updatedHoveredItems = [...hoveredItems];
@@ -44,6 +47,12 @@ function Navbar() {
         };
     }, [prevScrollPos, visible]);
 
+    setTimeout(() => {
+        setOpacity(1);
+        setTrans("translateY(25%)")
+        console.log("print")
+    }, 100)
+
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
@@ -72,7 +81,14 @@ function Navbar() {
                 
 
                 {windowWidth >= 1024 && (
-                                <div className=' text-base flex mr-[7vw] justify-center translate-x-0 translate-y-1/4'>
+                                <div className=' text-base flex mr-[7vw] justify-center translate-x-0 translate-y-1/4'
+                                
+                                style={{
+                                 opacity: opacity,
+                                transform: trans,
+                                transition: 'opacity 1s ease-out, transform 1s ease-out',
+                                    }}
+                                >
                                 <ul className='list-none flex font-bold '>
                                 <li className='ml-10 hover:cursor-pointer flex flex-col items-center ' onMouseEnter={() => handleMouseEnter(0)} onMouseLeave={() => handleMouseLeave(0)}>
                                     Home 

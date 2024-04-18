@@ -31,7 +31,7 @@ const ParallaxRow = ({ scrollPos, titles, images, sign }) => {
   const inertiaDuration = 2500; 
 
   return (
-    <div className="overflow-hidden pr-9 w-full">
+    <div className="overflow-hidden pr-9 w-[100vw] ">
       <div className="flex" style={{ 
         width: `${containerWidth}px`, 
         transform: `translateX(${sign}${containerPosition}px)`, 

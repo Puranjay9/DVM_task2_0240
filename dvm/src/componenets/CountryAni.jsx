@@ -49,14 +49,14 @@ function CountryAni() {
 
   return (
     <div
-      className="h-1/6 overflow-hidden w-full translate-x-2/10"
+      className="h-1/6  w-full translate-x-2/10"
       onScroll={handleScroll}
       style={{
         scrollbarWidth: "none",
         WebkitOverflowScrolling: "none",
       }}
     >
-      <div className="container py-10">
+      <div className="container py-10 w-full">
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={"-"}/>
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={""}/>
         <ParallaxRow scrollPos={scrollPos} titles={Row1.map(item => item.title)} images={Row1.map(item => item.image)} sign={"-"}/>

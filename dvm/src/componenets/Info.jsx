@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ImagesShow from './ImagesShow';
 import AnimaButton from './AnimaButton';
 import { useColorMode } from '../ColorModeContextProvider';
@@ -16,6 +16,17 @@ function Info() {
 
   const [scrollPos , setScrollPos] = useState(0);
 
+  const handleScroll =() =>{
+    setScrollPos(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  },[])
+
   const { colorMode } = useColorMode();
   
   return (
@@ -29,7 +40,7 @@ function Info() {
           </div>
         </div>
         <div className='flex justify-center items-center w-1/2 h-1/2 max-sm:w-full'>
-          <div className='shadow-lg rounded-tl-[60px] w-11/12 h-full'>
+          <div className={`shadow-lg rounded-tl-[60px] w-11/12 h-full `} >
             <ImagesShow images={slider1}/>
           </div>
         </div>
@@ -38,7 +49,7 @@ function Info() {
 
 
       <div className='relative flex flex-row max-sm:flex-col max-sm:h-auto'>
-  <div className='flex justify-center items-center w-1/2 h-1/2 z-[7] absolute left-[50px] top-[150px] max-sm:top-0 max-sm:h-11/12 max-sm:items-start max-sm:left max-sm:w-full max-sm: '>
+  <div className='flex justify-center items-center w-1/2 h-1/2 z-[7] absolute left-[50px] top-[150px] max-sm:top-0 max-sm:h-11/12 max-sm:items-start max-sm:left max-sm:w-full transition-all ' style={{ transform: `translateY(-${(scrollPos * 0.2)-700}px)` }}>
     <ImagesShow images={slider1}/>
   </div>
 

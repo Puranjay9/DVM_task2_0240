@@ -55,7 +55,7 @@ const CarouselSlider = ({ slides }) => {
           {slides.map((slide, index) => (
             <div key={index} className={`flex-none w-full max-sm:w-1/3 max-sm:h-8/12 max-md:w-1/3 lg:w-1/${slidesToShow} px-2 `} style={{ width: `${slideWidth}%` }}>
               <div className="bg-gray-100 rounded-tr-[40px] shadow-lg  overflow-hidden">
-                <img src={slide.image} alt={slide.title} className="rounded-lg mb-2" />
+                <img src={slide.image} alt={slide.title} className="rounded-lg mb-2 transition-all hover:scale-[1.1]" />
                 <h2 className="text-2xl font-semibold p-2 w-11/12">{slide.title}</h2>
                 <p className="text-black text-base p-2 w-11/12">{slide.text}</p>
               </div>
