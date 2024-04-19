@@ -16,30 +16,57 @@ function Position() {
   const [opacity , setOpacity] = useState(0);
   const [trans , setTrans] = useState("translateY(100%)")
 
+  const handleShow = () => {
+    setOpacity(1);
+    setTrans("translateY(0)");
+    console.log("Component is now visible");
+  };
+
   
 
-  useEffect(() =>{
-        setOpacity(1);
-        setTrans("translateY(0)")
-        console.log("print")
-      
-      },[])
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            handleShow();
+          }
+        });
+      },
+      {
+        root: null, 
+        rootMargin: "0px", 
+        threshold: 0.1, 
+      }
+    );
+    
+    const hiddenElements = document.querySelectorAll('.position-container'); 
+    
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  }, []);
 
   const { colorMode } = useColorMode();
-  return (
-    <div className={`flex flex-row m-11 p-11 text-[#00235d] max-sm:flex-col max-sm:m-2 max-sm:p-2 `}>
-      <div className={`flex flex-col mr-[200px] max-sm:mr-0 transition-all duration-300 ${colorMode ? ' text-[#ceaa53]' : ' text-[#00235d]'}`}
-      
-      style={{
-        opacity: opacity,
-        transform: trans,
-        transition: 'opacity 1s ease-out, transform 1s ease-out',
-      }}
 
-      >
+  
+  return (
+    <div className={`flex flex-row m-11 p-11 text-[#00235d] max-sm:flex-col max-sm:m-2 max-sm:p-2 position-container `}>
+      <div className={`flex flex-col mr-[200px] max-sm:mr-0 transition-all duration-300 ${colorMode ? ' text-[#ceaa53]' : ' text-[#00235d]'}`}  >
         <h1 className=' text-base font-bold '>VACANCIES</h1>
-        <h1 className='text-7xl'>Join</h1>
-        <h1 className='text-6xl'>our Team</h1>
+        <h1 className='text-7xl'
+        style={{
+          opacity: opacity,
+          transform: trans,
+          transition: 'opacity 1s ease-out, transform 1s ease-out',
+        }}
+        >Join</h1>
+        <h1 className='text-6xl'
+        style={{
+          opacity: opacity,
+          transform: trans,
+          transition: 'opacity 1s ease-out, transform 1s ease-out',
+        }}
+        >our Team</h1>
         <div className='mt-5'>
           <AnimaButton text={"Discover our Customer Portal"} />
           </div>
