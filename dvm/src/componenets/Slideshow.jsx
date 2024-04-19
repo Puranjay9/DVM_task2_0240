@@ -6,22 +6,25 @@ const content = [
     title: "We Believe in People",
     text: "We believe in our people because they are our greatest asset. At MPL, we are not just a company; we are a family. Each and every one of us shares our unique MPL culture, in which everyone is valued, supported, and empowered to reach their full potential.",
     image: "/img/img1.jpg",
-    position: "mt"
+    position: "130"
   },
   {
     title: "We Solve Each and Any Shipping Problem",
     text: "We work with teams per commodity, each with specific domain expertise, to provide high-quality solutions or knowledge for any product or request. With offices around the world, we have excellent knowledge of local markets, laws, and customs.",
-    image: "/img/img2.jpg"
+    image: "/img/img2.jpg",
+    position: "160"
   },
   {
     title: "Single Point of Contact",
     text: "Our colleagues assist and guide customers from end to end in all logistics processes, including customs clearance and tender and procurement services.",
-    image: "/img/img3.jpg"
+    image: "/img/img3.jpg",
+    position: "190"
   },
   {
     title: "Flexible & Fast Decision-Making",
     text: "Our flexibility and desire to help customers in any way possible really sets us apart. Our fast decision-making comes from the open internal communication strategy we follow.",
-    image: "/img/img4.jpg"
+    image: "/img/img4.jpg",
+    position: "240"
   },
 ];
 
@@ -58,14 +61,15 @@ const Slideshow = () => {
           <img
             src={content[activeIndex].image}
             alt="Associated content"
-            className="rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 mt-[230px] max-sm:mt-[5vh]"
+            className={`rounded-lg shadow-lg w-2/3 h-2/3 ml-1/5 max-sm:mt-[5vh] transition-all`}
+            style={{ marginTop: `${content[activeIndex].position}px` }}
           />
         </div>
       </div>
 
       <div className='flex-1 flex-col p-2 ml-0 mt-11 mr-11 max-sm:h-[120vh] max-sm:mt-[10vh] '>
         {content.map((section, index) => (
-          <div key={index} className="relative mb-6 ">
+          <div key={index} className="relative mb-6 transition-all ">
             <h1
               className="text-4xl cursor-pointer mb-8 max-sm:text-2xl transition-all"
               onClick={() => setActiveIndex(index)}
