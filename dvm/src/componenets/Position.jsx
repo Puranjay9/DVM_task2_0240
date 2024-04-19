@@ -29,7 +29,9 @@ function Position() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            handleShow();
+            setTimeout(() =>{
+              handleShow();
+            },200)
           }
         });
       },

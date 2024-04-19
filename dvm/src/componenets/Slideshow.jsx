@@ -63,17 +63,17 @@ const Slideshow = () => {
         </div>
       </div>
 
-      <div className='flex-1 flex-col p-2 ml-0 mt-11 mr-11 max-sm:h-[120vh] max-sm:mt-[10vh]'>
+      <div className='flex-1 flex-col p-2 ml-0 mt-11 mr-11 max-sm:h-[120vh] max-sm:mt-[10vh] '>
         {content.map((section, index) => (
-          <div key={index} className="relative mb-6">
+          <div key={index} className="relative mb-6 ">
             <h1
-              className="text-4xl cursor-pointer mb-8 max-sm:text-2xl"
+              className="text-4xl cursor-pointer mb-8 max-sm:text-2xl transition-all"
               onClick={() => setActiveIndex(index)}
             >
               {section.title}
             </h1>
             {activeIndex === index ? (
-              <p className="text-2xl m-11 ml-0 max-sm:text-sm">{section.text}</p>
+              <p className="text-2xl m-11 ml-0 max-sm:text-sm transition-all">{section.text}</p>
             ) : null}
             <div className="h-[1.5px] bg-slate-500 w-full overflow-hidden">
               <div
